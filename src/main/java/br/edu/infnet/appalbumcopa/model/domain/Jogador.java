@@ -5,12 +5,36 @@ import br.edu.infnet.appalbumcopa.model.domain.enums.Selecao;
 
 public class Jogador extends Figurinha {
 
-    public String nome;
-    public Selecao selecao;
-    public Posicao posicao;
+    private String nome;
+    private Selecao selecao;
+    private Posicao posicao;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Selecao getSelecao() {
+        return selecao;
+    }
+
+    public void setSelecao(Selecao selecao) {
+        this.selecao = selecao;
+    }
+
+    public Posicao getPosicao() {
+        return posicao;
+    }
+
+    public void setPosicao(Posicao posicao) {
+        this.posicao = posicao;
+    }
 
     @Override
     public String toString() {
-        return nome + "; " + selecao + "; " + posicao;
+        return super.toString() + "; " + nome + "; " + selecao + "; " + posicao;
     }
 }

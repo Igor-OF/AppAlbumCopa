@@ -4,11 +4,27 @@ import java.time.LocalDate;
 
 public class Campeao extends Figurinha {
 
-    public String partida;
-    public LocalDate data;
+    private String partida;
+    private LocalDate data;
+
+    public String getPartida() {
+        return partida;
+    }
+
+    public void setPartida(String partida) {
+        this.partida = partida;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
 
     @Override
     public String toString() {
-        return partida + "; " + data;
+        return super.toString() + "; " + partida + "; " + data;
     }
 }

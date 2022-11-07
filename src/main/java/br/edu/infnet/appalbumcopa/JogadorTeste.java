@@ -3,6 +3,7 @@ package br.edu.infnet.appalbumcopa;
 import br.edu.infnet.appalbumcopa.model.domain.Jogador;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Posicao;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Selecao;
+import br.edu.infnet.appalbumcopa.model.domain.enums.Tipo;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -13,22 +14,30 @@ public class JogadorTeste implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
+        System.out.println("## CADASTRAMENTO DE JOGADORES ##");
+
         Jogador j1 = new Jogador();
-        j1.nome = "Neymar";
-        j1.selecao = Selecao.BRASIL;
-        j1.posicao = Posicao.ATACANTE;
+        j1.setCodigo("BRA17");
+        j1.setTipo(Tipo.OURO);
+        j1.setNome("Neymar");
+        j1.setSelecao(Selecao.BRASIL);
+        j1.setPosicao(Posicao.ATACANTE);
         System.out.println("Jogador - " + j1);
 
         Jogador j2 = new Jogador();
-        j2.nome = "Messi";
-        j2.selecao = Selecao.ARGENTINA;
-        j2.posicao = Posicao.ATACANTE;
+        j2.setCodigo("ARG20");
+        j2.setTipo(Tipo.PRATA);
+        j2.setNome("Messi");
+        j2.setSelecao(Selecao.ARGENTINA);
+        j2.setPosicao(Posicao.ATACANTE);
         System.out.println("Jogador - " + j2);
 
         Jogador j3 = new Jogador();
-        j3.nome = "Cristiano Ronaldo";
-        j3.selecao = Selecao.PORTUGAL;
-        j3.posicao = Posicao.ATACANTE;
+        j3.setCodigo("POR19");
+        j3.setTipo(Tipo.BRONZE);
+        j3.setNome("Cristiano Ronaldo");
+        j3.setSelecao(Selecao.PORTUGAL);
+        j3.setPosicao(Posicao.ATACANTE);
         System.out.println("Jogador - " + j3);
     }
 }

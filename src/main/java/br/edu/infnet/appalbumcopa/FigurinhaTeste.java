@@ -1,10 +1,17 @@
 package br.edu.infnet.appalbumcopa;
 
+import br.edu.infnet.appalbumcopa.model.domain.Campeao;
+import br.edu.infnet.appalbumcopa.model.domain.Estadio;
 import br.edu.infnet.appalbumcopa.model.domain.Figurinha;
+import br.edu.infnet.appalbumcopa.model.domain.Jogador;
+import br.edu.infnet.appalbumcopa.model.domain.enums.Posicao;
+import br.edu.infnet.appalbumcopa.model.domain.enums.Selecao;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Tipo;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class FigurinhaTeste implements ApplicationRunner {
@@ -12,19 +19,29 @@ public class FigurinhaTeste implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        Figurinha f1 = new Figurinha();
-        f1.codigo = "BRA17";
-        f1.tipo = Tipo.COMUM;
-        System.out.println("Figurinha - " + f1);
+        System.out.println("## CADASTRAMENTO DE FIGURINHAS ##");
 
-        Figurinha f2 = new Figurinha();
-        f2.codigo = "ARG12";
-        f2.tipo = Tipo.OURO;
-        System.out.println("Figurinha - " + f2);
+        Jogador j1 = new Jogador();
+        j1.setCodigo("BRA17");
+        j1.setTipo(Tipo.OURO);
+        j1.setNome("Neymar");
+        j1.setSelecao(Selecao.BRASIL);
+        j1.setPosicao(Posicao.ATACANTE);
+        System.out.println("Jogador - " + j1);
 
-        Figurinha f3 = new Figurinha();
-        f3.codigo = "FRA01";
-        f3.tipo = Tipo.BRONZE;
-        System.out.println("Figurinha - " + f3);
+        Estadio e1 = new Estadio();
+        e1.setCodigo("FWC01");
+        e1.setTipo(Tipo.COMUM);
+        e1.setNome("Al Bayt");
+        e1.setCidade("Al Khor");
+        e1.setCapacidade(60000);
+        System.out.println("Estadio - " + e1);
+
+        Campeao c1 = new Campeao();
+        c1.setCodigo("FWC23");
+        c1.setTipo(Tipo.COMUM);
+        c1.setPartida("Brasil 5x2 Suécia");
+        c1.setData(LocalDate.of(1958, 6, 29));
+        System.out.println("Campeao - " + c1);
     }
 }

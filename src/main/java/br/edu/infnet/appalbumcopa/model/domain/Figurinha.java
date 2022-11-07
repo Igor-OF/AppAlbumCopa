@@ -2,10 +2,26 @@ package br.edu.infnet.appalbumcopa.model.domain;
 
 import br.edu.infnet.appalbumcopa.model.domain.enums.Tipo;
 
-public class Figurinha {
+public abstract class Figurinha {
 
-    public String codigo;
-    public Tipo tipo;
+    private String codigo;
+    private Tipo tipo;
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
 
     @Override
     public String toString() {
