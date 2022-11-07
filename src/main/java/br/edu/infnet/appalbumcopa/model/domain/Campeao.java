@@ -1,13 +1,14 @@
 package br.edu.infnet.appalbumcopa.model.domain;
 
+import java.time.LocalDate;
+
 public class Campeao extends Figurinha {
 
-    public String selecao;
-    public String Ano;
-    public String resultadoPartida;
+    public String partida;
+    public LocalDate data;
 
     @Override
     public String toString() {
-        return selecao + "; " + Ano + "; " + resultadoPartida;
+        return partida + "; " + data;
     }
 }
