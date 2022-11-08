@@ -1,24 +1,30 @@
 package br.edu.infnet.appalbumcopa.model.domain;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Remessa {
 
-    private LocalDate data;
+    private LocalDateTime data;
     private Album album;
     private List<Figurinha> figurinhas;
 
     public Remessa() {
-        this.figurinhas = new ArrayList();
+        this.data = LocalDateTime.now();
+        this.figurinhas = new ArrayList<>();
     }
 
-    public LocalDate getData() {
+    public Remessa(Album album) {
+        this();
+        this.album = album;
+    }
+
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
@@ -32,6 +38,10 @@ public class Remessa {
 
     public List<Figurinha> getFigurinhas() {
         return figurinhas;
+    }
+
+    public void setFigurinhas(List<Figurinha> figurinhas) {
+        this.figurinhas = figurinhas;
     }
 
     public void addFigurinha(Figurinha figurinha) {

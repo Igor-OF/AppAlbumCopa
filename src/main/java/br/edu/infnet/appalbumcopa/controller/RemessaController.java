@@ -1,25 +1,22 @@
-package br.edu.infnet.appalbumcopa;
+package br.edu.infnet.appalbumcopa.controller;
 
 import br.edu.infnet.appalbumcopa.model.domain.*;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Posicao;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Selecao;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Tipo;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class RemessaTeste implements ApplicationRunner {
+@Controller
+public class RemessaController {
 
-    @Override
-    public void run(ApplicationArguments args) throws Exception {
-
-        System.out.println("## CADASTRAMENTO DE REMESSAS ##");
+    @GetMapping(value = "/remessa/lista")
+    public String telaLista(Model model) {
 
         Jogador jogador = new Jogador();
         jogador.setCodigo("BRA17");
@@ -57,15 +54,21 @@ public class RemessaTeste implements ApplicationRunner {
         Remessa r1 = new Remessa();
         r1.setAlbum(album);
         r1.setFigurinhas(figurinhasPrimeiraRemessa);
-        System.out.println("Remessa - " + r1);
 
         Remessa r2 = new Remessa();
         r2.setAlbum(album);
         r2.setFigurinhas(figurinhasDemaisRemessas);
-        System.out.println("Remessa - " + r2);
 
         Remessa r3 = new Remessa(album);
         r3.setFigurinhas(figurinhasDemaisRemessas);
-        System.out.println("Remessa - " + r3);
+
+        List<Remessa> remessas = new ArrayList<>();
+        remessas.add(r1);
+        remessas.add(r2);
+        remessas.add(r3);
+
+        model.addAttribute("listagem", remessas);
+
+        return "remessa/lista";
     }
 }
