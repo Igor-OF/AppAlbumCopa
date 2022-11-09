@@ -1,7 +1,11 @@
 package br.edu.infnet.appalbumcopa.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "tcampeao")
 public class Campeao extends Figurinha {
 
     private String partida;

@@ -3,6 +3,11 @@ package br.edu.infnet.appalbumcopa.model.domain;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Posicao;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Selecao;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tjogador")
 public class Jogador extends Figurinha {
 
     private String nome;

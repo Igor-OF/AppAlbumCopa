@@ -1,5 +1,10 @@
 package br.edu.infnet.appalbumcopa.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "testadio")
 public class Estadio extends Figurinha {
 
     private String nome;

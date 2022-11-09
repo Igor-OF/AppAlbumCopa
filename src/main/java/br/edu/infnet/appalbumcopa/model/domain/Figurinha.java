@@ -2,8 +2,14 @@ package br.edu.infnet.appalbumcopa.model.domain;
 
 import br.edu.infnet.appalbumcopa.model.domain.enums.Tipo;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tfigurinha")
 public abstract class Figurinha {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String codigo;
     private Tipo tipo;

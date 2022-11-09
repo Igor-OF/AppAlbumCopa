@@ -1,9 +1,14 @@
 package br.edu.infnet.appalbumcopa.model.domain;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "talbum")
 public class Album {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nomeDono;
     private LocalDate dataAquisicao;
