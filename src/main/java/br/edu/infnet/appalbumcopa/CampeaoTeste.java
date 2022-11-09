@@ -1,5 +1,6 @@
 package br.edu.infnet.appalbumcopa;
 
+import br.edu.infnet.appalbumcopa.controller.CampeaoController;
 import br.edu.infnet.appalbumcopa.model.domain.Campeao;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Tipo;
 import org.springframework.boot.ApplicationArguments;
@@ -22,6 +23,7 @@ public class CampeaoTeste implements ApplicationRunner {
         c1.setPartida("Brasil 5x2 Suécia");
         c1.setData(LocalDate.of(1958, 6, 29));
         System.out.println("Campeao - " + c1);
+        CampeaoController.incluir(c1);
 
         Campeao c2 = new Campeao();
         c2.setCodigo("FWC24");
@@ -29,6 +31,7 @@ public class CampeaoTeste implements ApplicationRunner {
         c2.setPartida("Brasil 4x1 Itália");
         c2.setData(LocalDate.of(1970, 6, 21));
         System.out.println("Campeao - " + c2);
+        CampeaoController.incluir(c2);
 
         Campeao c3 = new Campeao();
         c3.setCodigo("FWC25");
@@ -36,5 +39,6 @@ public class CampeaoTeste implements ApplicationRunner {
         c3.setPartida("Brasil 2x0 Alemanha");
         c3.setData(LocalDate.of(2002, 6, 30));
         System.out.println("Campeao - " + c3);
+        CampeaoController.incluir(c3);
     }
 }

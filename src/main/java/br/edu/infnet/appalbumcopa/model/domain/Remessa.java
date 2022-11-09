@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Remessa {
 
+    private Integer id;
     private LocalDateTime data;
     private Album album;
     private List<Figurinha> figurinhas;
@@ -18,6 +19,14 @@ public class Remessa {
     public Remessa(Album album) {
         this();
         this.album = album;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public LocalDateTime getData() {

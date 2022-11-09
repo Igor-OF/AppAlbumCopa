@@ -1,5 +1,6 @@
 package br.edu.infnet.appalbumcopa;
 
+import br.edu.infnet.appalbumcopa.controller.EstadioController;
 import br.edu.infnet.appalbumcopa.model.domain.Estadio;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Tipo;
 import org.springframework.boot.ApplicationArguments;
@@ -21,6 +22,7 @@ public class EstadioTeste implements ApplicationRunner {
         e1.setCidade("Al Khor");
         e1.setCapacidade(60000);
         System.out.println("Estadio - " + e1);
+        EstadioController.incluir(e1);
 
         Estadio e2 = new Estadio();
         e2.setCodigo("FWC02");
@@ -29,6 +31,7 @@ public class EstadioTeste implements ApplicationRunner {
         e2.setCidade("Doha");
         e2.setCapacidade(40000);
         System.out.println("Estadio - " + e2);
+        EstadioController.incluir(e2);
 
         Estadio e3 = new Estadio();
         e3.setCodigo("FWC03");
@@ -37,5 +40,6 @@ public class EstadioTeste implements ApplicationRunner {
         e3.setCidade("Doha");
         e3.setCapacidade(40000);
         System.out.println("Estadio - " + e3);
+        EstadioController.incluir(e3);
     }
 }

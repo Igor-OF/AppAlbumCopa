@@ -1,5 +1,6 @@
 package br.edu.infnet.appalbumcopa;
 
+import br.edu.infnet.appalbumcopa.controller.JogadorController;
 import br.edu.infnet.appalbumcopa.model.domain.Jogador;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Posicao;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Selecao;
@@ -23,6 +24,7 @@ public class JogadorTeste implements ApplicationRunner {
         j1.setSelecao(Selecao.BRASIL);
         j1.setPosicao(Posicao.ATACANTE);
         System.out.println("Jogador - " + j1);
+        JogadorController.incluir(j1);
 
         Jogador j2 = new Jogador();
         j2.setCodigo("ARG20");
@@ -31,6 +33,7 @@ public class JogadorTeste implements ApplicationRunner {
         j2.setSelecao(Selecao.ARGENTINA);
         j2.setPosicao(Posicao.ATACANTE);
         System.out.println("Jogador - " + j2);
+        JogadorController.incluir(j2);
 
         Jogador j3 = new Jogador();
         j3.setCodigo("POR19");
@@ -39,5 +42,6 @@ public class JogadorTeste implements ApplicationRunner {
         j3.setSelecao(Selecao.PORTUGAL);
         j3.setPosicao(Posicao.ATACANTE);
         System.out.println("Jogador - " + j3);
+        JogadorController.incluir(j3);
     }
 }

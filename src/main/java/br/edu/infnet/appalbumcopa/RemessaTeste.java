@@ -1,5 +1,6 @@
 package br.edu.infnet.appalbumcopa;
 
+import br.edu.infnet.appalbumcopa.controller.RemessaController;
 import br.edu.infnet.appalbumcopa.model.domain.*;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Posicao;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Selecao;
@@ -58,14 +59,17 @@ public class RemessaTeste implements ApplicationRunner {
         r1.setAlbum(album);
         r1.setFigurinhas(figurinhasPrimeiraRemessa);
         System.out.println("Remessa - " + r1);
+        RemessaController.incluir(r1);
 
         Remessa r2 = new Remessa();
         r2.setAlbum(album);
         r2.setFigurinhas(figurinhasDemaisRemessas);
         System.out.println("Remessa - " + r2);
+        RemessaController.incluir(r2);
 
         Remessa r3 = new Remessa(album);
         r3.setFigurinhas(figurinhasDemaisRemessas);
         System.out.println("Remessa - " + r3);
+        RemessaController.incluir(r3);
     }
 }

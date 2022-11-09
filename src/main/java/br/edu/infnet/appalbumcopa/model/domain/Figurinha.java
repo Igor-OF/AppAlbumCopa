@@ -4,8 +4,17 @@ import br.edu.infnet.appalbumcopa.model.domain.enums.Tipo;
 
 public abstract class Figurinha {
 
+    private Integer id;
     private String codigo;
     private Tipo tipo;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getCodigo() {
         return codigo;
@@ -25,6 +34,6 @@ public abstract class Figurinha {
 
     @Override
     public String toString() {
-        return codigo + "; " + tipo;
+        return id + "; " + codigo + "; " + tipo;
     }
 }
