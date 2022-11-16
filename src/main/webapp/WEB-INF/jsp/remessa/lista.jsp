@@ -3,9 +3,10 @@
 <html>
 <head>
     <title>Cadastramento de Remessas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
+<c:import url="/WEB-INF/jsp/menu.jsp"/>
 <div class="container mt-3">
     <h3>Remessas: ${listagem.size()}</h3>
 

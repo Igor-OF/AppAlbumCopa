@@ -1,5 +1,6 @@
 package br.edu.infnet.appalbumcopa.model.domain;
 
+import javax.persistence.Transient;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,9 @@ public class Remessa {
 
     private Integer id;
     private LocalDateTime data;
+    @Transient
     private Album album;
+    @Transient
     private List<Figurinha> figurinhas;
 
     public Remessa() {

@@ -1,5 +1,7 @@
 package br.edu.infnet.appalbumcopa.model.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.time.LocalDate;
@@ -9,6 +11,7 @@ import java.time.LocalDate;
 public class Campeao extends Figurinha {
 
     private String partida;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate data;
 
     public String getPartida() {

@@ -10,10 +10,12 @@ import br.edu.infnet.appalbumcopa.model.service.FigurinhaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
+@Order(4)
 @Component
 public class FigurinhaTeste implements ApplicationRunner {
 

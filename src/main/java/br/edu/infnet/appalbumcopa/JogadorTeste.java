@@ -1,6 +1,7 @@
 package br.edu.infnet.appalbumcopa;
 
 import br.edu.infnet.appalbumcopa.model.domain.Jogador;
+import br.edu.infnet.appalbumcopa.model.domain.Usuario;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Posicao;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Selecao;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Tipo;
@@ -8,8 +9,10 @@ import br.edu.infnet.appalbumcopa.model.service.JogadorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+@Order(5)
 @Component
 public class JogadorTeste implements ApplicationRunner {
 
@@ -21,12 +24,16 @@ public class JogadorTeste implements ApplicationRunner {
 
         System.out.println("## CADASTRAMENTO DE JOGADORES ##");
 
+        Usuario usuario = new Usuario();
+        usuario.setId(1);
+
         Jogador j1 = new Jogador();
         j1.setCodigo("BRA17");
         j1.setTipo(Tipo.OURO);
         j1.setNome("Neymar");
         j1.setSelecao(Selecao.BRASIL);
         j1.setPosicao(Posicao.ATACANTE);
+        j1.setUsuario(usuario);
         System.out.println("Jogador - " + j1);
         jogadorService.incluir(j1);
 
@@ -36,6 +43,7 @@ public class JogadorTeste implements ApplicationRunner {
         j2.setNome("Messi");
         j2.setSelecao(Selecao.ARGENTINA);
         j2.setPosicao(Posicao.ATACANTE);
+        j2.setUsuario(usuario);
         System.out.println("Jogador - " + j2);
         jogadorService.incluir(j2);
 
@@ -45,6 +53,7 @@ public class JogadorTeste implements ApplicationRunner {
         j3.setNome("Cristiano Ronaldo");
         j3.setSelecao(Selecao.PORTUGAL);
         j3.setPosicao(Posicao.ATACANTE);
+        j3.setUsuario(usuario);
         System.out.println("Jogador - " + j3);
         jogadorService.incluir(j3);
     }

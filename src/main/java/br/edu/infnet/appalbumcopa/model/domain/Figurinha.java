@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "tfigurinha")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Figurinha {
 
     @Id
@@ -13,6 +14,10 @@ public abstract class Figurinha {
     private Integer id;
     private String codigo;
     private Tipo tipo;
+
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
 
     public Integer getId() {
         return id;
@@ -36,6 +41,14 @@ public abstract class Figurinha {
 
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     @Override

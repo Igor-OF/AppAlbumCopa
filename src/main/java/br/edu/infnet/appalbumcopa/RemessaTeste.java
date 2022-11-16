@@ -7,13 +7,14 @@ import br.edu.infnet.appalbumcopa.model.domain.enums.Selecao;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Tipo;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Order(2)
 @Component
 public class RemessaTeste implements ApplicationRunner {
 
