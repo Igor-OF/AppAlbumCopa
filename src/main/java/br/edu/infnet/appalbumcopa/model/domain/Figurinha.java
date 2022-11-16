@@ -3,6 +3,7 @@ package br.edu.infnet.appalbumcopa.model.domain;
 import br.edu.infnet.appalbumcopa.model.domain.enums.Tipo;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tfigurinha")
@@ -14,7 +15,8 @@ public abstract class Figurinha {
     private Integer id;
     private String codigo;
     private Tipo tipo;
-
+    @ManyToMany(mappedBy = "figurinhas")
+    private List<Remessa> remessas;
     @ManyToOne
     @JoinColumn(name = "idUsuario")
     private Usuario usuario;
@@ -49,6 +51,14 @@ public abstract class Figurinha {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public List<Remessa> getRemessas() {
+        return remessas;
+    }
+
+    public void setRemessas(List<Remessa> remessas) {
+        this.remessas = remessas;
     }
 
     @Override

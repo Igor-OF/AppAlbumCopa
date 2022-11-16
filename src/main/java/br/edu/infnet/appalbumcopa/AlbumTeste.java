@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
-@Order(3)
+@Order(2)
 @Component
 public class AlbumTeste implements ApplicationRunner {
 

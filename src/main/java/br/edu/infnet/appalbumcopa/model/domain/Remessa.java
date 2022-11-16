@@ -1,18 +1,26 @@
 package br.edu.infnet.appalbumcopa.model.domain;
 
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "tremessa")
 public class Remessa {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private LocalDateTime data;
-    @Transient
+    @OneToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "idAlbum")
     private Album album;
-    @Transient
+    @ManyToMany(cascade = CascadeType.DETACH)
     private List<Figurinha> figurinhas;
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
 
     public Remessa() {
         this.data = LocalDateTime.now();
@@ -56,8 +64,12 @@ public class Remessa {
         this.figurinhas = figurinhas;
     }
 
-    public void addFigurinha(Figurinha figurinha) {
-        this.figurinhas.add(figurinha);
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     @Override

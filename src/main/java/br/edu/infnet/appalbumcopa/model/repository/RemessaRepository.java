@@ -1,6 +1,6 @@
 package br.edu.infnet.appalbumcopa.model.repository;
 
-import br.edu.infnet.appalbumcopa.model.domain.Album;
+import br.edu.infnet.appalbumcopa.model.domain.Remessa;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AlbumRepository extends CrudRepository<Album, Integer> {
+public interface RemessaRepository extends CrudRepository<Remessa, Integer> {
 
-    @Query("from Album a where a.usuario.id = :userid")
-    List<Album> obterLista(Integer userid);
+    @Query("from Remessa r where r.usuario.id =:userid")
+    List<Remessa> obterLista(Integer userid);
 }

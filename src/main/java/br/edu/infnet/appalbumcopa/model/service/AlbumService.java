@@ -1,6 +1,7 @@
 package br.edu.infnet.appalbumcopa.model.service;
 
 import br.edu.infnet.appalbumcopa.model.domain.Album;
+import br.edu.infnet.appalbumcopa.model.domain.Usuario;
 import br.edu.infnet.appalbumcopa.model.repository.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,9 @@ public class AlbumService {
 
     public Collection<Album> obterLista() {
         return (Collection<Album>) albumRepository.findAll();
+    }
+
+    public Collection<Album> obterLista(Usuario usuario) {
+        return (Collection<Album>) albumRepository.obterLista(usuario.getId());
     }
 }

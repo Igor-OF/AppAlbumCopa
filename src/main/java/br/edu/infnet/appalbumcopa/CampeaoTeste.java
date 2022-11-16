@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
-@Order(6)
+@Order(5)
 @Component
 public class CampeaoTeste implements ApplicationRunner {
 

@@ -16,6 +16,15 @@ public class Usuario {
     @OneToMany
     @JoinColumn(name = "idUsuario")
     private List<Album> albuns;
+    @OneToMany
+    @JoinColumn(name = "idUsuario")
+    private List<Remessa> remessas;
+    @OneToMany
+    @JoinColumn(name = "idUsuario")
+    private List<Figurinha> figurinhas;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "idendereco")
+    private Endereco endereco;
 
     public Integer getId() {
         return id;
@@ -55,6 +64,30 @@ public class Usuario {
 
     public void setAlbuns(List<Album> albuns) {
         this.albuns = albuns;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public List<Remessa> getRemessas() {
+        return remessas;
+    }
+
+    public void setRemessas(List<Remessa> remessas) {
+        this.remessas = remessas;
+    }
+
+    public List<Figurinha> getFigurinhas() {
+        return figurinhas;
+    }
+
+    public void setFigurinhas(List<Figurinha> figurinhas) {
+        this.figurinhas = figurinhas;
     }
 
     @Override

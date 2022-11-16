@@ -18,8 +18,8 @@ public class AlbumController {
     private AlbumService albumService;
 
     @GetMapping(value = "/album/lista")
-    public String telaLista(Model model) {
-        model.addAttribute("listagem", albumService.obterLista());
+    public String telaLista(Model model, @SessionAttribute("user")Usuario usuario) {
+        model.addAttribute("listagem", albumService.obterLista(usuario));
 
         return "album/lista";
     }

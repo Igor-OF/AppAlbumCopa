@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UsuarioController {
@@ -24,6 +25,13 @@ public class UsuarioController {
 
     @GetMapping(value = "/usuario")
     public String telaCadastro() {
+        return "usuario/cadastro";
+    }
+
+    @PostMapping(value = "/cep")
+    public String obterCep(Model model, @RequestParam String cep){
+        model.addAttribute("endereco", usuarioService.obterCep(cep));
+
         return "usuario/cadastro";
     }
 

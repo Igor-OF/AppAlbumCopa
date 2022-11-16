@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
-@Order(4)
+@Order(3)
 @Component
 public class FigurinhaTeste implements ApplicationRunner {
 

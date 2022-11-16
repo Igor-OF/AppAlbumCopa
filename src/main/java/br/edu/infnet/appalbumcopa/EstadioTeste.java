@@ -10,7 +10,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-@Order(7)
+@Order(6)
 @Component
 public class EstadioTeste implements ApplicationRunner {
 

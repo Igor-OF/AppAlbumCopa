@@ -1,5 +1,7 @@
 package br.edu.infnet.appalbumcopa.model.service;
 
+import br.edu.infnet.appalbumcopa.clients.IEnderecoClient;
+import br.edu.infnet.appalbumcopa.model.domain.Endereco;
 import br.edu.infnet.appalbumcopa.model.domain.Usuario;
 import br.edu.infnet.appalbumcopa.model.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,8 @@ import java.util.Collection;
 @Service
 public class UsuarioService {
 
+    @Autowired
+    private IEnderecoClient enderecoClient;
     @Autowired
     private UsuarioRepository usuarioRepository;
 
@@ -34,5 +38,9 @@ public class UsuarioService {
         }
 
         return null;
+    }
+
+    public Endereco obterCep(String cep) {
+        return enderecoClient.obterCep(cep);
     }
 }

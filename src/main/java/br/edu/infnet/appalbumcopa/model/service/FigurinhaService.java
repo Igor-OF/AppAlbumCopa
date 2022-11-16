@@ -1,6 +1,7 @@
 package br.edu.infnet.appalbumcopa.model.service;
 
 import br.edu.infnet.appalbumcopa.model.domain.Figurinha;
+import br.edu.infnet.appalbumcopa.model.domain.Usuario;
 import br.edu.infnet.appalbumcopa.model.repository.FigurinhaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,9 @@ public class FigurinhaService {
 
     public Collection<Figurinha> obterLista() {
         return (Collection<Figurinha>) figurinhaRepository.findAll();
+    }
+
+    public Collection<Figurinha> obterLista(Usuario usuario) {
+        return (Collection<Figurinha>) figurinhaRepository.obterLista(usuario.getId());
     }
 }
